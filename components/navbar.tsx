@@ -21,9 +21,9 @@ export function Navbar() {
   ]
 
   return (
-    <header className="mx-auto max-w-2xl px-6 pt-16">
-      <div className="flex items-center justify-between pb-8 border-b border-border">
-        <Link href="/" className="text-lg font-semibold text-foreground hover:opacity-70 transition-opacity">
+    <header className="mx-auto max-w-2xl px-6 pt-8">
+      <div className="flex items-center justify-between">
+        <Link href="/" className="font-semibold text-foreground hover:opacity-70 transition-opacity">
           Your Name
         </Link>
 
