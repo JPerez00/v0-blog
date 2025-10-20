@@ -8,22 +8,24 @@ export default function AboutPage() {
           <h1 className="mb-4 text-3xl font-semibold tracking-tight text-foreground">About</h1>
         </header>
 
-        <div className="prose prose-neutral dark:prose-invert">
+        <div className="prose">
           <p className="text-pretty leading-relaxed text-foreground">
-            I'm a developer and writer passionate about building elegant software and sharing what I learn along the
-            way.
+            I'm a developer and writer passionate about artificial intelligence, machine learning, and building elegant
+            software. I share what I learn along the way through this blog.
           </p>
 
           <h2 className="mt-12 text-xl font-semibold text-foreground">Background</h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            I've been writing code for over a decade, working on everything from small startups to large-scale
-            applications. My focus is on creating intuitive user experiences and maintainable codebases.
+            I've been writing code for over a decade, with a focus on AI and machine learning applications. I work on
+            everything from experimental ML models to production-scale AI systems, always striving to create intuitive
+            user experiences backed by intelligent algorithms.
           </p>
 
           <h2 className="mt-12 text-xl font-semibold text-foreground">What I Write About</h2>
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            On this blog, I share my thoughts on software development, design principles, and the craft of building
-            products. I believe in learning in public and sharing knowledge with the community.
+            On this blog, I share my thoughts on artificial intelligence, machine learning techniques, neural networks,
+            and the practical applications of AI in software development. I believe in learning in public and sharing
+            knowledge with the community.
           </p>
 
           <h2 className="mt-12 text-xl font-semibold text-foreground">Connect</h2>

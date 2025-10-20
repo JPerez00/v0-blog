@@ -21,10 +21,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto max-w-2xl px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="mb-10 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
@@ -32,7 +32,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         <article>
           {post.metadata.image && (
-            <div className="mb-8 overflow-hidden rounded-lg bg-muted">
+            <div className="mb-10 overflow-hidden rounded-lg">
               <Image
                 src={post.metadata.image || "/placeholder.svg"}
                 alt={post.metadata.title}
@@ -44,8 +44,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
           )}
 
-          <header className="mb-8">
-            <h1 className="mb-4 text-balance text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
+          <header className="mb-10">
+            <h1 className="mb-4 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
               {post.metadata.title}
             </h1>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -53,12 +53,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
           </header>
 
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose max-w-none">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>
 
-        <footer className="mt-16 border-t border-border pt-8">
+        <footer className="mt-16 border-t border-border/40 pt-8">
           <Link href="/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             ← Back to home
           </Link>
