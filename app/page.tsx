@@ -7,19 +7,62 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <header className="mb-16">
-          <h1 className="mb-4 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
-            <span className="text-foreground">Your</span> <span className="text-muted-foreground">Name</span>
+        <header className="mb-20">
+          <div className="mb-6 text-xs font-mono uppercase tracking-widest text-muted-foreground/60">
+            Portfolio / 2025
+          </div>
+
+          <h1 className="mb-6 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
+            <span className="text-foreground">Building what others will call</span> <span className="text-muted-foreground">the future...</span>
           </h1>
-          <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
+
+          <p className="mb-12 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
             I'm a developer and writer. I work on web technologies and write about software, design, and the craft of
             building products. Previously at Company.
           </p>
+
+          <div className="mb-8 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
+              <span>Available for projects</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span>United States</span>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">The Longterm Focus</div>
+            <div className="flex flex-wrap gap-2">
+              {["AI & ML", "React", "TypeScript", "Next.js", "Node.js", "Python"].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-border px-3 py-1 text-xs tracking-wide text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:text-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </header>
 
         <section>
           <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Recent Writing</h2>
+            <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground/60">Recent Writing</h2>
             <Link href="/blog" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               View all →
             </Link>

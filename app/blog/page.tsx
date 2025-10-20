@@ -7,10 +7,11 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <header className="mb-16">
-          <h1 className="mb-4 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
-            Blog
-          </h1>
+        <header className="mb-20">
+          <div className="mb-6 text-xs font-mono uppercase tracking-widest text-muted-foreground/60">
+            Blog / Writings
+          </div>
+          <h1 className="mb-6 text-3xl font-medium tracking-tight text-foreground md:text-4xl">Blog</h1>
           <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
             Thoughts on software, design, and building products.
           </p>
