@@ -8,20 +8,20 @@ export default function HomePage() {
     <div className="min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <header className="mb-20">
-          <div className="mb-6 text-xs font-mono uppercase tracking-widest text-muted-foreground/60">
+          <div className="mb-6 text-xs font-mono uppercase tracking-widest text-muted-foreground/80">
             Portfolio / 2025
           </div>
 
           <h1 className="mb-6 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
-            <span className="text-foreground">Building what others will call</span> <span className="text-muted-foreground">the future...</span>
+            <span className="text-foreground">Building what others will call the future...</span>
           </h1>
 
-          <p className="mb-12 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mb-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
             I'm a developer and writer. I work on web technologies and write about software, design, and the craft of
             building products. Previously at Company.
           </p>
 
-          <div className="mb-8 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
+          {/* <div className="mb-8 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
               <span>Available for projects</span>
@@ -43,7 +43,7 @@ export default function HomePage() {
               </svg>
               <span>United States</span>
             </div>
-          </div>
+          </div> */}
 
           <div className="space-y-6">
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">The Longterm Focus</div>
@@ -51,7 +51,7 @@ export default function HomePage() {
               {["AI & ML", "React", "TypeScript", "Next.js", "Node.js", "Python"].map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-border px-3 py-1 text-xs tracking-wide text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:text-foreground"
+                  className="bg-muted/40 rounded-full border border-border px-3 py-1 text-xs tracking-wide text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:text-foreground"
                 >
                   {skill}
                 </span>
@@ -62,7 +62,7 @@ export default function HomePage() {
 
         <section>
           <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground/60">Recent Writing</h2>
+            <h2 className="text-xs font-mono uppercase tracking-widest text-muted-foreground/80">Recent Writing</h2>
             <Link href="/blog" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
               View all →
             </Link>
