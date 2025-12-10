@@ -21,10 +21,10 @@ export default function HomePage() {
             building products. Previously at Company.
           </p>
 
-          {/* <div className="mb-8 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
+          <div className="mb-8 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
-              <span>Available for projects</span>
+              <span>Available for consultation</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,9 +41,9 @@ export default function HomePage() {
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <span>United States</span>
+              <span>Canada</span>
             </div>
-          </div> */}
+          </div>
 
           <div className="space-y-6">
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">The Longterm Focus</div>
@@ -51,7 +51,7 @@ export default function HomePage() {
               {["AI & ML", "React", "TypeScript", "Next.js", "Node.js", "Python"].map((skill) => (
                 <span
                   key={skill}
-                  className="bg-muted/40 rounded-full border border-border px-3 py-1 text-xs tracking-wide text-foreground/70 transition-all duration-300 hover:border-foreground/30 hover:text-foreground"
+                  className="bg-muted/40 rounded-full border border-border px-3 py-1 text-xs tracking-wide text-foreground/70 hover:transition-all duration-300 hover:border-foreground/30 hover:text-foreground"
                 >
                   {skill}
                 </span>
@@ -91,7 +91,7 @@ export default function HomePage() {
         <footer className="mt-24 border-t border-border/40 pt-8">
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link href="https://twitter.com" className="transition-colors hover:text-foreground">
-              Twitter
+              X
             </Link>
             <Link href="https://github.com" className="transition-colors hover:text-foreground">
               GitHub

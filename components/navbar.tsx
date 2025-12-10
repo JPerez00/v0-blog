@@ -23,7 +23,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/30 bg-background/80 backdrop-blur-md">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="flex h-14 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-sm font-medium tracking-tight transition-opacity hover:opacity-60">
             <span className="text-foreground">Your</span> <span className="text-muted-foreground">Name</span>
           </Link>
