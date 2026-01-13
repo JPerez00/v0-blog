@@ -18,9 +18,9 @@ export default function AboutPage() {
                 elegant software. I share what I learn along the way through this blog.
               </p>
             </div>
-            <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-border/50 md:w-full">
+            <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-border/50 md:w-full">
               <Image
-                src="/professional-developer-portrait-minimalist-black-a.jpg"
+                src="/bg-profile.webp"
                 alt="Profile"
                 fill
                 className="object-cover"
