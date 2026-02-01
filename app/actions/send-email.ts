@@ -1,16 +1,6 @@
 "use server"
 
-import { Resend } from "resend"
 import { contactFormSchema, type ContactFormData } from "@/lib/schema"
-import { EmailTemplate } from "@/components/email-template"
-
-// Validate env vars at startup
-const resendApiKey = process.env.RESEND_API_KEY
-if (!resendApiKey) {
-  console.warn("RESEND_API_KEY is not set. Contact form will not work.")
-}
-
-const resend = new Resend(resendApiKey)
 
 export type SendEmailState = {
   success: boolean
@@ -49,6 +39,7 @@ export async function sendEmail(
   const { name, email, message } = result.data
 
   // Check if RESEND_API_KEY is set
+  const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
     return {
       success: false,
@@ -57,6 +48,13 @@ export async function sendEmail(
   }
 
   try {
+    // Dynamically import Resend only when needed (server-side only)
+    const { Resend } = await import("resend")
+    const resend = new Resend(resendApiKey)
+
+    // Import email template dynamically
+    const { EmailTemplate } = await import("@/components/email-template")
+
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "Contact Form <onboarding@resend.dev>",
       to: process.env.RESEND_TO_EMAIL || "delivered@resend.dev",
