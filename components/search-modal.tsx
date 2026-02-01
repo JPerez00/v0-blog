@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { Search, X, FileText } from "lucide-react"
 import { getBlogPosts, type BlogPost } from "@/lib/blog"
@@ -12,32 +12,23 @@ interface SearchModalProps {
 
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("")
-  const [results, setResults] = useState<BlogPost[]>([])
   const router = useRouter()
-  const posts = getBlogPosts()
+  
+  // Memoize posts to prevent recreation on every render
+  const posts = useMemo(() => getBlogPosts(), [])
 
-  const searchPosts = useCallback(
-    (searchQuery: string) => {
-      if (!searchQuery.trim()) {
-        setResults([])
-        return
-      }
-
-      const lowerQuery = searchQuery.toLowerCase()
-      const filtered = posts.filter(
-        (post) =>
-          post.metadata.title.toLowerCase().includes(lowerQuery) ||
-          post.metadata.summary?.toLowerCase().includes(lowerQuery) ||
-          post.content.toLowerCase().includes(lowerQuery)
-      )
-      setResults(filtered)
-    },
-    [posts]
-  )
-
-  useEffect(() => {
-    searchPosts(query)
-  }, [query, searchPosts])
+  // Derive results from query - no need for separate state and useEffect
+  const results = useMemo(() => {
+    if (!query.trim()) return []
+    
+    const lowerQuery = query.toLowerCase()
+    return posts.filter(
+      (post) =>
+        post.metadata.title.toLowerCase().includes(lowerQuery) ||
+        post.metadata.summary?.toLowerCase().includes(lowerQuery) ||
+        post.content.toLowerCase().includes(lowerQuery)
+    )
+  }, [query, posts])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
