@@ -1,14 +1,11 @@
 import { notFound } from "next/navigation"
-import Link from "next/link"
 import Image from "next/image"
 import { getBlogPosts } from "@/lib/blog"
-import { ArrowLeft } from "lucide-react"
+import BackButton from "@/components/back-button"
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
+  return posts.map((post) => ({ slug: post.slug }))
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
@@ -16,20 +13,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const posts = getBlogPosts()
   const post = posts.find((post) => post.slug === slug)
 
-  if (!post) {
-    notFound()
-  }
+  if (!post) notFound()
 
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <Link
-          href="/"
-          className="mb-10 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back
-        </Link>
+        <div className="mb-10">
+          <BackButton fallbackHref="/" />
+        </div>
 
         <article>
           {post.metadata.image && (
@@ -58,12 +49,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>
-
-        <footer className="mt-16 border-t border-border/40 pt-8">
-          <Link href="/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            ← Back to home
-          </Link>
-        </footer>
       </div>
     </div>
   )
