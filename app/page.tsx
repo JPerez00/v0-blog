@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <header className="mb-20">
           <div className="mb-6 text-xs font-mono uppercase tracking-widest text-muted-foreground/80">
-            Portfolio / 2025
+            Developer Portfolio / {new Date().getFullYear()}
           </div>
 
           <h1 className="mb-6 text-balance text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl">
@@ -89,16 +89,22 @@ export default function HomePage() {
         </section>
 
         <footer className="mt-24 border-t border-border/40 pt-8">
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="https://twitter.com" className="transition-colors hover:text-foreground">
-              X
-            </Link>
-            <Link href="https://github.com" className="transition-colors hover:text-foreground">
-              GitHub
-            </Link>
-            <Link href="mailto:hello@example.com" className="transition-colors hover:text-foreground">
-              Email
-            </Link>
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="flex gap-6 text-sm text-muted-foreground">
+              <Link href="https://twitter.com" className="transition-colors hover:text-foreground">
+                X
+              </Link>
+              <Link href="https://github.com" className="transition-colors hover:text-foreground">
+                GitHub
+              </Link>
+              <Link href="mailto:hello@example.com" className="transition-colors hover:text-foreground">
+                Email
+              </Link>
+              
+            </div>
+            <div className="flex text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()}
+            </div>
           </div>
         </footer>
       </div>
